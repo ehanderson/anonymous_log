@@ -1,4 +1,3 @@
 class Post < ActiveRecord::Base
-  has_many :index
-  has_many :tags, through :index
+  has_and_belongs_to_many :tags
 end

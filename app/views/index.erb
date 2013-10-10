@@ -1,23 +1,35 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  <h1>Welcome to Emily's Blog Site</h1>
+  <p>Below I have a list of all of the posts you can brows through. Enjoy</p>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
-</div>
+  <h2> This will be a drop down of all post names </h2>
+  <a href="/post">This is the link to one Post</a>
+  <h3>This will be a way to select by date</h3>
+
+  <h2>This will be a drop down or a list of all tag names</h2>
+
+  <form action="post_form" id ="post">
+    Title:<input type="text" name="title">
+    <input type = "submit">
+  </form>
+
+
+
+  <select>
+    <option value="post1">title of post1</option>
+    <option value="post2">title of post2</option>
+  </select>
+  
+
+   <tbody>
+
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.id %></td>
+          <td><a href="/posts/<%= post.id %>"><%= post.name %></a></td>
+        </tr>
+      <% end  %>
+
+
+
+    </tbody>
