@@ -3,14 +3,15 @@ get '/' do
   erb :index
 end
 
-get '/posts' do
 
-  erb :posts
+get '/tags' do
+
+  erb :tags
 end
 
-get '/posts/:id' do
-  @post = Post.find(params[:id])
-  erb :post
+get '/tags/:id' do
+  @tag = Tag.find(params[:id])
+  
+  erb :tag
 end
-
 
