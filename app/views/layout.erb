@@ -16,8 +16,24 @@
   <script src="/js/application.js"></script>
 
   <title></title>
+  <div class ="header">
+    <a href="/" class="disabled"></a>
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/posts">Posts</a></li>
+        <li><a href="/tags">Tags</a></li>
+        <li><a href="/newpost">Create New Post</a></li>
+      </ul>
+      <a href="/posts"></a>
+    </div>
+ 
+    
+  </div>
 </head>
 <body>
   <%= yield %>
 </body>
+    <div class="footer">
+      Copyright Emily Anderson; 2013 Coyotes, Inc.
+    </div>
 </html>
