@@ -1,15 +1,17 @@
 <h1><%=@post.title%></h1>
-  <h3>Created At : <%=@post.created_at%>
+  <h4>Created At : <%=@post.created_at.strftime("%d %b. %Y")%>
+    Updated At: <%=@post.updated_at.strftime("%d %b. %Y")%>
+  </h4>
   
-  <br>
-    Updated At: <%=@post.updated_at%></h3>
-
-  
+  <div class = "content">
+    <p><%=@post.body%></p>
+  </div>
 
   <div class="posts">
     <ul> 
+      <label for= "telated tags">Related Tags</label> 
       <%@post.tags.each do |tag| %>
-      <ul><li><a href= "/tags/<%tag.id%>"><%=tag.title %></a></li></ul>
+      <li><a href= "/tags/<%=tag.id%>"><%=tag.title %></a></li>
       <%end%>
     </ul>
   </div> <!-- posts -->

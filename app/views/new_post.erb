@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Create a New Post!</h1>
+    <p>Please give ur post a title and then write some other crap</p>
+  
+  <div class="content">
+    <table>
+      <form action = "/newpost" method = "POST">
+        <ul>
+          <li>
+            <label for="post title">Enter Your Post Title: </label>
+              <input type = "text" name = "listing[title]" placeholder = "Name your post here">
+          </li>    
+
+          <li>
+            <label for= "post">Your Post: </label>
+              <textarea id= "post" name = "listing[body]" placeholder = "Your post goes here"></textarea>
+          </li>
+          
+          <li>
+            <input type ="submit" value = "Post">
+          </li> 
+          
+        </ul>  
+      </form>       
+    </table>
+  </div>  
+</div>
+
+<div class = "possibilities">
+  <h3>Here are some of the already existing posts:</h3>   
+    <select multiple>
+      <%Tag.all.each do |tag| %>
+        <option value="<%=tag%>"><%=tag.title%></option>
+      <%end%> 
+    </select>
+</div>
+       
+
+

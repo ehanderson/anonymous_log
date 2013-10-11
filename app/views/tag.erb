@@ -9,6 +9,17 @@
     Updated At: <%=@tag.updated_at%></h3>
 
 
+  <div class="tags">
+    <p>This is a list of posts</p>
+  
+    <ul> 
+      <%@tag.posts.each do |post| %>
+      <ul><li><a href= "/posts/<%=post.id%>"><%=post.title %></a></li></ul>
+      <%end%>
+    </ul>  
+
+  </div>
+
 
 
 
