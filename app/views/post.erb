@@ -7,6 +7,13 @@
   
 
   <div class="posts">
-    <ol>
-    <li>Here willl be a list of all posts affiliated with list </li>
+    <ul> 
+      <%@post.tags.each do |tag| %>
+      <ul><li><a href= "/tags/<%tag.id%>"><%=tag.title %></a></li></ul>
+      <%end%>
+    </ul>
+  </div> <!-- posts -->
+
+
    
+
